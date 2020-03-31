@@ -1,0 +1,128 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="container">
+    <nav>
+      <div id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div id="main-nav" class="top-part">
+        <ul>
+          <li>
+            <a href="/">
+              <img src="img/logo.png" alt="Amatch logo">
+            </a>
+          </li>
+          <li>
+            <a href="/profile">My profile</a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="/" class="active">Dashboard</a>
+          </li>
+          <li>
+            <a href="/finder">Find singles</a>
+          </li>
+          <li>
+            <a href="/matches">Your matches</a>
+          </li>
+          <li>
+            <a href="/chats">Chats</a>
+          </li>
+        </ul>
+      </div>
+      <div class="bottom-part">
+        <div class="title">
+          <nav class="breadcrumbs">
+            <a href="#">Home</a>
+            <span>></span>
+            <a href="#">Dashboard</a>
+          </nav>
+          <h1>Dashboard</h1>
+        </div>
+        <form action="/logout" method="post">
+          <button type="submit">Logout</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+  <div class="container">
+    <main id="content">
+      <article>
+        <section id="matches">
+          <h1>We found 3 matches based on your preferences!</h1>
+          <div id="match-items">
+            <ul>
+              <li data-match="match-id">
+                <figure>
+                  <div class="img-wrapper">
+                    <img class="profile-picture"
+                      src="https://media.haircutinspiration.com/photos/20190527042923/Voluminous-Comb-Over-1-1.jpg"
+                      width="250px" height="auto" alt="Stan Bankras">
+                  </div>
+                  <figcaption>Stan Bankras, 19</figcaption>
+                </figure>
+                <div class="hearts">
+                  <form action="/like" method="POST">
+                    <input type="hidden" name="id" value="match-id">
+                    <button type="submit">
+                      <img class="like active" src="img/like.png" alt="">
+                      <span class="liked-text">Liked</span>
+                    </button>
+                  </form>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <nav class="slider-nav">
+            <div class="wrap">
+              <i class="material-icons arrows" id="slide-back">arrow_back_ios</i>
+              <i class="material-icons slide-icon" data-slide="">panorama_fish_eye</i>
+              <i class="material-icons slide-icon" data-slide="">panorama_fish_eye</i>
+              <i class="material-icons slide-icon" data-slide="">panorama_fish_eye</i>
+              <i class="material-icons slide-icon" data-slide="">panorama_fish_eye</i>
+              <i class="material-icons arrows" id="slide-forward">arrow_forward_ios</i>
+            </div>
+          </nav>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <div class="widgets">
+        <section>
+          <h3>About Amatch</h3>
+          <p>Short story about what Amatch is can be placed in this footer widget kind of thing.</p>
+        </section>
+        <section>
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Matches</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Chats</a></li>
+            <li><a href="#">Finder</a></li>
+          </ul>
+        </section>
+      </div>
+      <div id="copyrights">© Amatch 2020</div>
+    </footer>
+  </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="js/enhancement.js"></script>
+  <script src="js/matchSlider.js"></script>
+  <script src="js/likingUsers.js"></script>
+  <script src="js/navigation.js"></script>
+</body>
+
+</html>
