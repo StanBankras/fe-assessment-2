@@ -12,6 +12,7 @@ axios.get('https://frontend-development-server.herokuapp.com/currentUser')
   axios.get('https://frontend-development-server.herokuapp.com/users')
   .then(response => {
     users = response.data;
+    console.log(currentUser);
     renderMatches(currentUser);
   })
   .catch(err => {
