@@ -62,13 +62,14 @@ function renderSliderButtons(matches) {
 
   for(let i=0;i<matches.length;i++) {
     const button = document.createElement('I');
-    button.setAttribute('data-slide', `${ matches[i].id }`);
+    button.setAttribute('data-slide', `${ i }`);
     button.setAttribute('class', 'material-icons slide-icon');
     button.textContent = 'panorama_fish_eye';
     sliderNav.appendChild(button);
   }
 
   sliderNav.appendChild(forwardArrow);
+  initializeSlider();
 }
 
 // Get user by userId
