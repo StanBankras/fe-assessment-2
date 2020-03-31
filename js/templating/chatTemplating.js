@@ -29,7 +29,7 @@ function renderChats(userId) {
   const user = getUser(userId);
   console.log(chats);
   chats.forEach(chat => {
-    const otherUser = userId == chat.users[0].id ? getUser(chat.users[0]) : getUser(chat.users[1]);
+    const otherUser = userId == chat.users[0] ? getUser(chat.users[1]) : getUser(chat.users[0]);
     const chatItem = document.createElement('LI');
     chatItem.setAttribute('class', 'chat-item');
     chatItem.innerHTML = `
