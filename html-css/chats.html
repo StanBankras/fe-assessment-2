@@ -1,0 +1,94 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <header class="container">
+    <nav>
+      <div id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div id="main-nav" class="top-part">
+        <ul>
+          <li>
+            <a href="/">
+              <img src="img/logo.png" alt="Amatch logo">
+            </a>
+          </li>
+          <li>
+            <a href="/profile">My profile</a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="/">Dashboard</a>
+          </li>
+          <li>
+            <a href="/finder">Find singles</a>
+          </li>
+          <li>
+            <a href="matches.html">Your matches</a>
+          </li>
+          <li>
+            <a href="chats.html" class="active">Chats</a>
+          </li>
+        </ul>
+      </div>
+      <div class="bottom-part">
+        <div class="title">
+          <nav class="breadcrumbs">
+            <a href="#">Home</a>
+            <span>></span>
+            <a href="#">Dashboard</a>
+          </nav>
+          <h1>Dashboard</h1>
+        </div>
+        <form action="https://frontend-development-server.herokuapp.com/logout" method="post">
+          <button type="submit">Logout</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+  <div class="container">
+    <main id="content">
+      <article>
+        <section>
+          <h2 class="page-header">Chat with matches who like you too!</h2>
+          <ul id="chat-list">
+          </ul>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <div class="widgets">
+        <section>
+          <h3>About Amatch</h3>
+          <p>Short story about what Amatch is can be placed in this footer widget kind of thing.</p>
+        </section>
+        <section>
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Matches</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Chats</a></li>
+            <li><a href="#">Finder</a></li>
+          </ul>
+        </section>
+      </div>
+      <div id="copyrights">© Amatch 2020</div>
+    </footer>
+  </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script defer src="js/templating/chatTemplating.js"></script>
+</body>
+
+</html>
