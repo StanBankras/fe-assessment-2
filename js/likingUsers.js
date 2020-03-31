@@ -9,7 +9,8 @@ function initializeLiking(activeUser) {
             // Used axios to send data from clientside to backend, as it's very lightweight and cleaner/easier in use than Fetch API
             return axios.post('https://frontend-development-server.herokuapp.com/like', {
                 likedUser: id,
-                userId: activeUser
+                userId: activeUser,
+                type: 'js'
             })
             .then((res) => {
                 if (res.request.status == 201) {
