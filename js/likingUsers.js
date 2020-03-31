@@ -1,4 +1,4 @@
-function initializeLiking() {
+function initializeLiking(activeUser) {
 
     const likeHearts = document.querySelectorAll('.hearts button');
 
