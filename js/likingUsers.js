@@ -8,9 +8,9 @@ function initializeLiking() {
             console.log(e.target);
             const id = e.target.parentNode.parentNode.parentNode.parentNode.dataset.match;
             // Used axios to send data from clientside to backend, as it's very lightweight and cleaner/easier in use than Fetch API
-            return axios.post('https://frontend-development-server.herokuapp.com//like', {
-                id: id,
-                js: true
+            return axios.post('http://localhost:3000/like', {
+                likedUser: id,
+                userId: activeUser
             })
             .then((res) => {
                 if (res.request.status == 201) {

@@ -2,12 +2,12 @@ const chatList = document.querySelector('#chat-list');
 let users = [];
 let chats = [];
 
-axios.get('https://frontend-development-server.herokuapp.com/chats')
+axios.get('http://localhost:3000/chats')
 .then(response => {
   chats = response.data;
 })
 .then(() => {
-  axios.get('https://frontend-development-server.herokuapp.com/users')
+  axios.get('http://localhost:3000/users')
   .then(response => {
     users = response.data;
     renderChats('5e676b813cd15e48d4114d80');

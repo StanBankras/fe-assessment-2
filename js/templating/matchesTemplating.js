@@ -2,11 +2,12 @@ const matchUl = document.querySelector('#match-items ul');
 const sliderNav = document.querySelector('#slider-nav .wrap');
 
 let users = [];
+const activeUser = '5e676b813cd15e48d4114d80';
 
-axios.get('https://frontend-development-server.herokuapp.com/users')
+axios.get('http://localhost:3000/users')
 .then(response => {
   users = response.data;
-  renderMatches('5e676b813cd15e48d4114d80');
+  renderMatches(activeUser);
 })
 .catch(err => {
   console.log(err);
