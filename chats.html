@@ -35,10 +35,10 @@
             <a href="/finder">Find singles</a>
           </li>
           <li>
-            <a href="matches.html" class="active">Your matches</a>
+            <a href="matches.html">Your matches</a>
           </li>
           <li>
-            <a href="chats.html">Chats</a>
+            <a href="chats.html" class="active">Chats</a>
           </li>
         </ul>
       </div>
@@ -60,41 +60,24 @@
   <div class="container">
     <main id="content">
       <article>
-        <section id="matches">
-          <h1>We found 3 matches based on your preferences!</h1>
-          <div id="match-items">
-            <ul>
-              <li data-match="match-id">
-                <figure>
-                  <div class="img-wrapper">
-                    <img class="profile-picture"
-                      src="https://media.haircutinspiration.com/photos/20190527042923/Voluminous-Comb-Over-1-1.jpg"
-                      width="250px" height="auto" alt="Stan Bankras">
-                  </div>
-                  <figcaption>Stan Bankras, 19</figcaption>
-                </figure>
-                <div class="hearts">
-                  <form action="/like" method="POST">
-                    <input type="hidden" name="id" value="match-id">
-                    <button type="submit">
-                      <img class="like active" src="img/like.png" alt="">
-                      <span class="liked-text">Liked</span>
-                    </button>
-                  </form>
+        <section>
+          <h2 class="page-header">Chat with matches who like you too!</h2>
+          <ul id="chat-list">
+            <li class="chat-item">
+              <a href="chat.html">
+                <img src="https://media.haircutinspiration.com/photos/20190527042923/Voluminous-Comb-Over-1-1.jpg" 
+                  alt="Stan Bankras"
+                  width="200px" 
+                  height="auto">
+                <div>
+                  <h3>Chat with Stan, 19</h3>
+                  <p class="last-message">Hoe is het? -
+                    12:06 - 23/09</p>
                 </div>
-              </li>
-            </ul>
-          </div>
-          <nav class="slider-nav">
-            <div class="wrap">
-              <i class="material-icons arrows" id="slide-back">arrow_back_ios</i>
-              <i class="material-icons slide-icon" data-slide="">panorama_fish_eye</i>
-              <i class="material-icons slide-icon" data-slide="">panorama_fish_eye</i>
-              <i class="material-icons slide-icon" data-slide="">panorama_fish_eye</i>
-              <i class="material-icons slide-icon" data-slide="">panorama_fish_eye</i>
-              <i class="material-icons arrows" id="slide-forward">arrow_forward_ios</i>
-            </div>
-          </nav>
+                <i class="material-icons arrows">arrow_forward_ios</i>
+              </a>
+            </li>
+          </ul>
         </section>
       </article>
     </main>
@@ -119,9 +102,6 @@
     </footer>
   </div>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="js/enhancement.js"></script>
-  <script src="js/matchSlider.js"></script>
-  <script src="js/likingUsers.js"></script>
   <script src="js/navigation.js"></script>
 </body>
 

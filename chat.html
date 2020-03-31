@@ -35,10 +35,10 @@
             <a href="/finder">Find singles</a>
           </li>
           <li>
-            <a href="matches.html" class="active">Your matches</a>
+            <a href="matches.html">Your matches</a>
           </li>
           <li>
-            <a href="chats.html">Chats</a>
+            <a href="chats.html" class="active">Chats</a>
           </li>
         </ul>
       </div>
@@ -60,41 +60,39 @@
   <div class="container">
     <main id="content">
       <article>
-        <section id="matches">
-          <h1>We found 3 matches based on your preferences!</h1>
-          <div id="match-items">
-            <ul>
-              <li data-match="match-id">
-                <figure>
-                  <div class="img-wrapper">
-                    <img class="profile-picture"
-                      src="https://media.haircutinspiration.com/photos/20190527042923/Voluminous-Comb-Over-1-1.jpg"
-                      width="250px" height="auto" alt="Stan Bankras">
-                  </div>
-                  <figcaption>Stan Bankras, 19</figcaption>
-                </figure>
-                <div class="hearts">
-                  <form action="/like" method="POST">
-                    <input type="hidden" name="id" value="match-id">
-                    <button type="submit">
-                      <img class="like active" src="img/like.png" alt="">
-                      <span class="liked-text">Liked</span>
-                    </button>
-                  </form>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <nav class="slider-nav">
-            <div class="wrap">
-              <i class="material-icons arrows" id="slide-back">arrow_back_ios</i>
-              <i class="material-icons slide-icon" data-slide="">panorama_fish_eye</i>
-              <i class="material-icons slide-icon" data-slide="">panorama_fish_eye</i>
-              <i class="material-icons slide-icon" data-slide="">panorama_fish_eye</i>
-              <i class="material-icons slide-icon" data-slide="">panorama_fish_eye</i>
-              <i class="material-icons arrows" id="slide-forward">arrow_forward_ios</i>
+        <section id="messages">
+          <div class="other-user">
+            <img src="https://media.haircutinspiration.com/photos/20190527042923/Voluminous-Comb-Over-1-1.jpg" alt="Remco de Winter">
+            <div class="details">
+              <h3>Remco de Winter, 28</h3>
+              <a href="#">View profile</a>
             </div>
-          </nav>
+          </div>
+          <div class="message-container">
+            <div class="outgoing">
+              <div class="metadata">
+                <span class="author">You at</span>
+                <span class="date">12:04 - 29/03</span>
+              </div>
+              <p>Message here</p>
+            </div>
+            <div class="incoming">
+              <div class="metadata">
+                <span class="author">Remco at</span>
+                <span class="date">12:08 - 29/03</span>
+              </div>
+              <p>Message</p>
+            </div>
+          </div>
+          <form action="/message" method="POST" class="input-field">
+            <p id="typing"></p>
+            <fieldset>
+              <input name="chatId" value="chatId" type="hidden" id="chat">
+              <input name="userId" value="userId" type="hidden" id="user">
+              <input name="message" id="message" type="text">
+              <button id="send-button">Send</button>
+            </fieldset>
+          </form>
         </section>
       </article>
     </main>
@@ -119,9 +117,6 @@
     </footer>
   </div>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="js/enhancement.js"></script>
-  <script src="js/matchSlider.js"></script>
-  <script src="js/likingUsers.js"></script>
   <script src="js/navigation.js"></script>
 </body>
 
