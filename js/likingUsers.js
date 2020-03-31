@@ -8,7 +8,7 @@ function initializeLiking() {
             console.log(e.target);
             const id = e.target.parentNode.parentNode.parentNode.parentNode.dataset.match;
             // Used axios to send data from clientside to backend, as it's very lightweight and cleaner/easier in use than Fetch API
-            return axios.post('http://localhost:3000/like', {
+            return axios.post('https://stanbankras.github.io/fe-assessment-2/like', {
                 likedUser: id,
                 userId: activeUser
             })

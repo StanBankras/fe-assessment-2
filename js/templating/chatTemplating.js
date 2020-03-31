@@ -1,21 +1,29 @@
 const chatList = document.querySelector('#chat-list');
 let users = [];
 let chats = [];
+let currentUser;
 
-axios.get('http://localhost:3000/chats')
+axios.get('https://frontend-development-server.herokuapp.com/currentUser')
 .then(response => {
-  chats = response.data;
+  currentUser = response.data;
 })
 .then(() => {
-  axios.get('http://localhost:3000/users')
+  axios.get('https://frontend-development-server.herokuapp.com/chats')
   .then(response => {
-    users = response.data;
-    renderChats('5e676b813cd15e48d4114d80');
+    chats = response.data;
   })
-  .catch(err => {
-    console.log(err);
-  });
+  .then(() => {
+    axios.get('https://frontend-development-server.herokuapp.com/users')
+    .then(response => {
+      users = response.data;
+      renderChats(currentUser);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  })
 })
+
 function renderChats(userId) {
   const chats = getChats(userId);
   const user = getUser(userId);

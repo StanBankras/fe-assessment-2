@@ -2,16 +2,22 @@ const matchUl = document.querySelector('#match-items ul');
 const sliderNav = document.querySelector('#slider-nav .wrap');
 
 let users = [];
-const activeUser = '5e676b813cd15e48d4114d80';
+let currentUser;
 
-axios.get('http://localhost:3000/users')
+axios.get('https://frontend-development-server.herokuapp.com/currentUser')
 .then(response => {
-  users = response.data;
-  renderMatches(activeUser);
+  currentUser = response.data;
 })
-.catch(err => {
-  console.log(err);
-});
+.then(() => {
+  axios.get('https://frontend-development-server.herokuapp.com/users')
+  .then(response => {
+    users = response.data;
+    renderMatches(currentUser);
+  })
+  .catch(err => {
+    console.log(err);
+  });
+})
 
 // Render the matches when the page is ready
 
@@ -70,7 +76,7 @@ function renderSliderButtons(matches) {
   }
 
   sliderNav.appendChild(forwardArrow);
-  initializeSlider();
+  initializeSlider(currentUser);
   initializeLiking();
 }
 

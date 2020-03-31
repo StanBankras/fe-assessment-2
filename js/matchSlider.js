@@ -1,6 +1,6 @@
-function initializeSlider() {
+function initializeSlider(currentUser) {
 
-const matches = getMatches('5e676b813cd15e48d4114d80');
+const matches = getMatches(currentUser);
 
 // Grab elements from HTML
 const matchSlider = document.querySelector('#match-items');
