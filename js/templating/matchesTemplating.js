@@ -70,6 +70,7 @@ function renderSliderButtons(matches) {
 
   sliderNav.appendChild(forwardArrow);
   initializeSlider();
+  initializeLiking();
 }
 
 // Get user by userId

@@ -22,8 +22,6 @@ let viewedMatches = [];
 // Hide scrollbar with Javascript
 matchSlider.style.overflow = 'hidden';
 
-console.log(document.querySelector('body').innerHTML);
-
 // Set first icon to selected and add this match to the viewed-matches list
 document.querySelector('.slider-nav .material-icons[data-slide="0"]').innerHTML = filledDot;
 addViewedMatch(0);
