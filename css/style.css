@@ -15,6 +15,18 @@ ul {
   list-style: none;
 }
 
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.hidden-opacity {
+  opacity: 0;
+}
+
+.hidden {
+  display: none;
+}
+
 /* 
 *
 *   Main layout styling
@@ -54,9 +66,12 @@ main {
 header .top-part {
   display: flex;
   flex-direction: column;
+  transition: .5s ease-in-out;
+}
+
+header .top-part.js {
   max-height: 0;
   overflow: hidden;
-  transition: .5s ease-in-out;
 }
 
 header .top-part.active {
@@ -170,10 +185,14 @@ footer .widgets {
   top: 2rem;
   width: 25px;
   height: 18px;
-  display: flex;
+  display: none;
   justify-content: space-between;
   flex-direction: column;
   cursor: pointer;
+}
+
+#hamburger.js {
+  display: flex;
 }
 
 #hamburger div {

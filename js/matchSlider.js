@@ -20,7 +20,7 @@ let listOffset = 0;
 let viewedMatches = [];
 
 // Hide scrollbar with Javascript
-matchSlider.style.overflow = 'hidden';
+matchSlider.classList.toggle('overflow-x-hidden');
 
 // Set first icon to selected and add this match to the viewed-matches list
 document.querySelector('.slider-nav .material-icons[data-slide="0"]').innerHTML = filledDot;
