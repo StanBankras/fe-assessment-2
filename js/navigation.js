@@ -6,5 +6,6 @@ hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
 });
 
+// Adds specific styling needed for when Javascript is enabled in the browser
 navigation.classList.add('js');
 hamburger.classList.add('js');
