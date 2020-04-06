@@ -57,6 +57,7 @@ function renderMatches(userId) {
 }
 
 function renderSliderButtons(matches) {
+  if (js == false) return;
   const backArrow = document.createElement('I');
   backArrow.setAttribute('id', 'slide-back');
   backArrow.setAttribute('class', 'material-icons arrows');
